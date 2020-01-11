@@ -1,5 +1,6 @@
 package com.trendyol.app.entity;
 
+import com.trendyol.app.delivery.cost.DeliveryCostCalculator;
 import com.trendyol.app.discount.applier.CampaignDiscountApplier;
 import com.trendyol.app.discount.applier.CouponDiscountApplier;
 import com.trendyol.app.discount.applier.IDiscountApplier;
@@ -33,10 +34,11 @@ class CartTest {
     IDiscountApplier couponDiscountApplier = Mockito.spy(new CouponDiscountApplier(discountCalculator));
     Campaign campaign1 = new Campaign(category, 20, 2, DiscountType.RATE);
     Campaign campaign2 = new Campaign(category, 50, 2, DiscountType.AMOUNT);
+    DeliveryCostCalculator deliveryCostCalculator = new DeliveryCostCalculator(3, 3, Cart.DELIVERY_FIXED_COST);
 
     @BeforeEach
     void setUp() {
-        cart = new Cart(cartManager, campaignDiscountApplier, couponDiscountApplier);
+        cart = new Cart(cartManager, campaignDiscountApplier, couponDiscountApplier, deliveryCostCalculator);
     }
 
     @Test
@@ -90,7 +92,7 @@ class CartTest {
 
     @Test
     void test_Print() {
-        cart = Mockito.spy(new Cart(cartManager, campaignDiscountApplier, couponDiscountApplier));
+        cart = Mockito.spy(new Cart(cartManager, campaignDiscountApplier, couponDiscountApplier, deliveryCostCalculator));
         cartItems.add(new CartItem(product, 1));
         cartItems.add(new CartItem(product2, 1));
         Mockito.doReturn(cartItems).when(cart).getItems();

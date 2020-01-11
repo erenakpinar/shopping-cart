@@ -1,5 +1,6 @@
 package com.trendyol.app;
 
+import com.trendyol.app.delivery.cost.DeliveryCostCalculator;
 import com.trendyol.app.discount.applier.CampaignDiscountApplier;
 import com.trendyol.app.discount.applier.CouponDiscountApplier;
 import com.trendyol.app.discount.applier.IDiscountApplier;
@@ -27,10 +28,13 @@ public class Main {
 
         ICartManager cartManager = new CartManager();
         IDiscountCalculator discountCalculator = new DiscountCalculator();
+        DeliveryCostCalculator deliveryCostCalculator = new DeliveryCostCalculator(3, 3, Cart.DELIVERY_FIXED_COST);
+
         Cart cart = new Cart(
                 cartManager,
                 new CampaignDiscountApplier(cartManager, discountCalculator),
-                new CouponDiscountApplier(discountCalculator)
+                new CouponDiscountApplier(discountCalculator),
+                deliveryCostCalculator
         );
 
         cart.addItem(macBookPro, 1);
