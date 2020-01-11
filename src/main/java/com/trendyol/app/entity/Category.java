@@ -22,7 +22,17 @@ public class Category {
         return parentCategory;
     }
 
-    public boolean equals(String title) {
-        return getTitle().equals(title);
+    public boolean equals(Category category) {
+        return getTitle().equals(category.getTitle());
+    }
+
+    public boolean equalsWithParents(Category category, Category searchCategory) {
+        if (category.equals(searchCategory)) {
+            return true;
+        } else if (category.getParentCategory() != null) {
+            return equalsWithParents(category.getParentCategory(), searchCategory);
+        }
+
+        return false;
     }
 }

@@ -1,5 +1,10 @@
 package com.trendyol.app;
 
+import com.trendyol.app.discount.applier.CampaignDiscountApplier;
+import com.trendyol.app.discount.applier.CouponDiscountApplier;
+import com.trendyol.app.discount.applier.IDiscountApplier;
+import com.trendyol.app.discount.calculator.DiscountCalculator;
+import com.trendyol.app.discount.calculator.IDiscountCalculator;
 import com.trendyol.app.discount.entity.Campaign;
 import com.trendyol.app.discount.entity.Coupon;
 import com.trendyol.app.discount.type.DiscountType;
@@ -21,7 +26,12 @@ public class Main {
         Product samsungWatch = new Product("Samsung Watch", 20, samsung);
 
         ICartManager cartManager = new CartManager();
-        Cart cart = new Cart(cartManager);
+        IDiscountCalculator discountCalculator = new DiscountCalculator();
+        Cart cart = new Cart(
+                cartManager,
+                new CampaignDiscountApplier(cartManager, discountCalculator),
+                new CouponDiscountApplier(discountCalculator)
+        );
 
         cart.addItem(macBookPro, 1);
         cart.addItem(macBookPro, 3);
@@ -34,6 +44,11 @@ public class Main {
         Campaign campaign1 = new Campaign(electronic, 20, 2, DiscountType.RATE);
         Campaign campaign2 = new Campaign(apple, 50, 2, DiscountType.AMOUNT);
         Campaign campaign3 = new Campaign(samsung, 60, 5, DiscountType.AMOUNT);
-        Coupon coupon1 = new Coupon(100, 10, DiscountType.AMOUNT);
+        Coupon coupon = new Coupon(100, 10, DiscountType.AMOUNT);
+
+        cart.applyDiscounts(campaign1, campaign2, campaign3);
+        cart.applyCoupon(coupon);
+
+        cart.print();
     }
 }

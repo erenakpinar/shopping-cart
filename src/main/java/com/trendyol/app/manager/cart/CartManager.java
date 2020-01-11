@@ -1,12 +1,34 @@
 package com.trendyol.app.manager.cart;
 
 import com.trendyol.app.entity.CartItem;
+import com.trendyol.app.entity.Category;
 import com.trendyol.app.entity.Product;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class CartManager implements ICartManager {
+    @Override
+    public List<CartItem> getCartItemsByCategory(List<CartItem> cartItems, Category campaignCategory) {
+        return cartItems
+                .stream()
+                .filter(i -> i.getProduct().getCategory().equalsWithParents(i.getProduct().getCategory(), campaignCategory))
+                .collect(Collectors.toList());
+    }
+    @Override
+    public double getCartItemsTotalAmount(List<CartItem> cartItems) {
+        return cartItems
+                .stream()
+                .mapToDouble(i -> i.getQuantity() * i.getProduct().getPrice())
+                .sum();
+    }
+    @Override
+    public int getItemCountInCartItemList(List<CartItem> cartItems) {
+        return cartItems.stream()
+                .mapToInt(CartItem::getQuantity)
+                .sum();
+    }
 
     @Override
     public List<CartItem> addItem(List<CartItem> cartItems, Product product, int quantity) {

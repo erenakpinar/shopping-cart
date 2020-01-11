@@ -18,12 +18,10 @@ class CategoryTest {
         Category appleCategory = new Category("Apple", electronicsCategory);
 
         assertEquals(electronicsCategory, appleCategory.getParentCategory());
-        assertEquals("Electronics", appleCategory.getParentCategory().getTitle());
-        assertNotEquals(appleCategory, appleCategory.getParentCategory());
     }
 
     @Test
-    void test_GetParentCategory_Should_Null_IfNotSet() {
+    void test_GetParentCategory_ShouldBe_Null_IfNotSet() {
         Category electronicsCategory = new Category("Electronics");
 
         assertNull(electronicsCategory.getParentCategory());
@@ -34,7 +32,31 @@ class CategoryTest {
         Category appleCategory = new Category("Apple");
         Category samsungCategory = new Category("Samsung");
 
-        assertTrue(appleCategory.equals(appleCategory.getTitle()));
-        assertFalse(appleCategory.equals(samsungCategory.getTitle()));
+        assertTrue(appleCategory.equals(appleCategory));
+        assertFalse(appleCategory.equals(samsungCategory));
+    }
+
+    @Test
+    void test_EqualsWithParents_ShouldBe_True_IfEquals() {
+        Category appleCategory = new Category("Apple");
+
+        assertTrue(appleCategory.equalsWithParents(appleCategory, appleCategory));
+    }
+
+    @Test
+    void test_EqualsWithParents_ShouldBe_True_IfParentEquals() {
+        Category electronicCategory = new Category("Electronic");
+        Category appleCategory = new Category("Apple", electronicCategory);
+        Category electronicCategory2 = new Category("Electronic");
+
+        assertTrue(appleCategory.equalsWithParents(appleCategory, electronicCategory2));
+    }
+
+    @Test
+    void test_EqualsWithParents_ShouldBe_False_IfNotEquals() {
+        Category appleCategory = new Category("Apple");
+        Category electronicCategory = new Category("Electronic");
+
+        assertFalse(appleCategory.equalsWithParents(appleCategory, electronicCategory));
     }
 }
