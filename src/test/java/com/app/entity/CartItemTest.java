@@ -1,4 +1,4 @@
-package com.trendyol.app.entity;
+package com.app.entity;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

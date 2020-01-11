@@ -1,7 +1,7 @@
-package com.trendyol.app.discount.entity;
+package com.app.discount.entity;
 
-import com.trendyol.app.discount.type.DiscountType;
-import com.trendyol.app.entity.Category;
+import com.app.discount.type.DiscountType;
+import com.app.entity.Category;
 
 public class Campaign extends Discount {
     private Category category;

@@ -1,11 +1,10 @@
-package com.trendyol.app.entity;
+package com.app.entity;
 
-import com.trendyol.app.delivery.cost.DeliveryCostCalculator;
-import com.trendyol.app.delivery.cost.IDeliveryCostCalculator;
-import com.trendyol.app.discount.applier.IDiscountApplier;
-import com.trendyol.app.discount.entity.Campaign;
-import com.trendyol.app.discount.entity.Coupon;
-import com.trendyol.app.manager.cart.ICartManager;
+import com.app.discount.entity.Campaign;
+import com.app.discount.entity.Coupon;
+import com.app.manager.cart.ICartManager;
+import com.app.delivery.cost.IDeliveryCostCalculator;
+import com.app.discount.applier.IDiscountApplier;
 
 import java.util.ArrayList;
 import java.util.Arrays;

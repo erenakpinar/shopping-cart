@@ -1,8 +1,8 @@
-package com.trendyol.app.manager.cart;
+package com.app.manager.cart;
 
-import com.trendyol.app.entity.CartItem;
-import com.trendyol.app.entity.Category;
-import com.trendyol.app.entity.Product;
+import com.app.entity.CartItem;
+import com.app.entity.Category;
+import com.app.entity.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

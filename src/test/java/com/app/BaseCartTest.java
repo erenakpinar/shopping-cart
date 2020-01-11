@@ -1,18 +1,18 @@
-package com.trendyol.app;
+package com.app;
 
-import com.trendyol.app.delivery.cost.DeliveryCostCalculator;
-import com.trendyol.app.discount.applier.CampaignDiscountApplier;
-import com.trendyol.app.discount.applier.CouponDiscountApplier;
-import com.trendyol.app.discount.applier.IDiscountApplier;
-import com.trendyol.app.discount.calculator.DiscountCalculator;
-import com.trendyol.app.discount.calculator.IDiscountCalculator;
-import com.trendyol.app.discount.entity.Campaign;
-import com.trendyol.app.discount.type.DiscountType;
-import com.trendyol.app.entity.Cart;
-import com.trendyol.app.entity.Category;
-import com.trendyol.app.entity.Product;
-import com.trendyol.app.manager.cart.CartManager;
-import com.trendyol.app.manager.cart.ICartManager;
+import com.app.discount.entity.Campaign;
+import com.app.discount.type.DiscountType;
+import com.app.manager.cart.CartManager;
+import com.app.manager.cart.ICartManager;
+import com.app.delivery.cost.DeliveryCostCalculator;
+import com.app.discount.applier.CampaignDiscountApplier;
+import com.app.discount.applier.CouponDiscountApplier;
+import com.app.discount.applier.IDiscountApplier;
+import com.app.discount.calculator.DiscountCalculator;
+import com.app.discount.calculator.IDiscountCalculator;
+import com.app.entity.Cart;
+import com.app.entity.Category;
+import com.app.entity.Product;
 import org.mockito.Mockito;
 
 public class BaseCartTest {

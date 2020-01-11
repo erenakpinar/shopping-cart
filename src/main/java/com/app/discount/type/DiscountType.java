@@ -1,4 +1,4 @@
-package com.trendyol.app.discount.type;
+package com.app.discount.type;
 
 public enum DiscountType {
     RATE,

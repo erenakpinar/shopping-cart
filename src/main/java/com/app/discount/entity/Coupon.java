@@ -1,6 +1,6 @@
-package com.trendyol.app.discount.entity;
+package com.app.discount.entity;
 
-import com.trendyol.app.discount.type.DiscountType;
+import com.app.discount.type.DiscountType;
 
 public class Coupon extends Discount {
     private double minimumAmount;

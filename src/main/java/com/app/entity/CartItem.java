@@ -1,4 +1,4 @@
-package com.trendyol.app.entity;
+package com.app.entity;
 
 public class CartItem {
     private Product product;

@@ -1,19 +1,19 @@
-package com.trendyol.app.entity;
+package com.app.entity;
 
-import com.trendyol.app.delivery.cost.DeliveryCostCalculator;
-import com.trendyol.app.discount.applier.CampaignDiscountApplier;
-import com.trendyol.app.discount.applier.CouponDiscountApplier;
-import com.trendyol.app.discount.applier.IDiscountApplier;
-import com.trendyol.app.discount.calculator.DiscountCalculator;
-import com.trendyol.app.discount.calculator.IDiscountCalculator;
-import com.trendyol.app.discount.entity.Campaign;
-import com.trendyol.app.discount.entity.Coupon;
-import com.trendyol.app.discount.type.DiscountType;
-import com.trendyol.app.manager.cart.CartManager;
-import com.trendyol.app.manager.cart.ICartManager;
+import com.app.delivery.cost.DeliveryCostCalculator;
+import com.app.discount.applier.CampaignDiscountApplier;
+import com.app.discount.applier.IDiscountApplier;
+import com.app.discount.calculator.DiscountCalculator;
+import com.app.discount.calculator.IDiscountCalculator;
+import com.app.discount.entity.Campaign;
+import com.app.discount.entity.Coupon;
+import com.app.discount.type.DiscountType;
+import com.app.manager.cart.CartManager;
+import com.app.manager.cart.ICartManager;
+import com.app.discount.applier.CouponDiscountApplier;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ class CartTest {
         Coupon coupon = new Coupon(100, 10, DiscountType.RATE);
         cart.applyCoupon(coupon);
 
-        assertEquals(coupon, cart.getCoupon());
+        Assertions.assertEquals(coupon, cart.getCoupon());
     }
 
     @Test

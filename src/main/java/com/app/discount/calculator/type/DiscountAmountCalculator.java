@@ -1,4 +1,4 @@
-package com.trendyol.app.discount.calculator.type;
+package com.app.discount.calculator.type;
 
 public class DiscountAmountCalculator implements IDiscountTypeCalculator {
     @Override

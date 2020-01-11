@@ -1,7 +1,6 @@
-package com.trendyol.app.discount.entity;
+package com.app.discount.entity;
 
-import com.trendyol.app.discount.type.DiscountType;
-import com.trendyol.app.entity.Category;
+import com.app.discount.type.DiscountType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

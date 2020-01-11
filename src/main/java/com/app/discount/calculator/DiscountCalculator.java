@@ -1,9 +1,9 @@
-package com.trendyol.app.discount.calculator;
+package com.app.discount.calculator;
 
-import com.trendyol.app.discount.calculator.type.DiscountAmountCalculator;
-import com.trendyol.app.discount.calculator.type.DiscountRateCalculator;
-import com.trendyol.app.discount.calculator.type.IDiscountTypeCalculator;
-import com.trendyol.app.discount.type.DiscountType;
+import com.app.discount.calculator.type.DiscountAmountCalculator;
+import com.app.discount.calculator.type.DiscountRateCalculator;
+import com.app.discount.type.DiscountType;
+import com.app.discount.calculator.type.IDiscountTypeCalculator;
 
 import java.util.HashMap;
 

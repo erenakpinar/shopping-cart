@@ -1,8 +1,8 @@
-package com.trendyol.app.delivery.cost;
+package com.app.delivery.cost;
 
-import com.trendyol.app.BaseCartTest;
-import com.trendyol.app.entity.Cart;
-import com.trendyol.app.entity.CartItem;
+import com.app.BaseCartTest;
+import com.app.entity.Cart;
+import com.app.entity.CartItem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

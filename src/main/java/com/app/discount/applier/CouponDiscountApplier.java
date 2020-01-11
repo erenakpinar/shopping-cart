@@ -1,7 +1,7 @@
-package com.trendyol.app.discount.applier;
+package com.app.discount.applier;
 
-import com.trendyol.app.discount.calculator.IDiscountCalculator;
-import com.trendyol.app.entity.Cart;
+import com.app.discount.calculator.IDiscountCalculator;
+import com.app.entity.Cart;
 
 public class CouponDiscountApplier implements IDiscountApplier {
 

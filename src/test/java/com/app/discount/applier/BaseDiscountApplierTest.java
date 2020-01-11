@@ -1,7 +1,7 @@
-package com.trendyol.app.discount.applier;
+package com.app.discount.applier;
 
-import com.trendyol.app.BaseCartTest;
-import com.trendyol.app.entity.Cart;
+import com.app.BaseCartTest;
+import com.app.entity.Cart;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
 

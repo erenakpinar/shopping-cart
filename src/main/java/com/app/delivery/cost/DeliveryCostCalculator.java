@@ -1,8 +1,8 @@
-package com.trendyol.app.delivery.cost;
+package com.app.delivery.cost;
 
-import com.trendyol.app.entity.Cart;
-import com.trendyol.app.entity.CartItem;
-import com.trendyol.app.entity.Category;
+import com.app.entity.Cart;
+import com.app.entity.CartItem;
+import com.app.entity.Category;
 
 import java.util.HashSet;
 import java.util.List;
