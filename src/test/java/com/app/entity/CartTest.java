@@ -64,7 +64,6 @@ class CartTest {
 
     @Test
     void test_ApplyDiscounts_ShouldBe_CartItemsSizeOne_IfAddedOneCampaign() {
-
         Mockito.doReturn(1.0).when(campaignDiscountApplier).apply(cart);
         cart.applyDiscounts(campaign1);
 
@@ -73,7 +72,6 @@ class CartTest {
 
     @Test
     void test_ApplyDiscounts_ShouldBe_CartItemsSizeTwo_IfAddedTwoCampaign() {
-
         Mockito.doReturn(1.0).when(campaignDiscountApplier).apply(cart);
         cart.applyDiscounts(campaign1);
         cart.applyDiscounts(campaign2);

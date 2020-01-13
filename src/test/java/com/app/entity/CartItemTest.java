@@ -16,17 +16,17 @@ class CartItemTest {
     }
 
     @Test
-    public void test_GetProduct() {
+    public void test_GetProduct_Should_ReturnGivenProduct() {
         assertEquals(iPhoneProduct, cartItem.getProduct());
     }
 
     @Test
-    public void test_GetQuantity() {
+    public void test_GetQuantity_Should_ReturnGivenQuantity() {
         assertEquals(10, cartItem.getQuantity());
     }
 
     @Test
-    public void test_SetQuantity() {
+    public void test_SetQuantity_Should_ReturnEditedQuantity() {
         cartItem.setQuantity(5);
 
         assertEquals(5, cartItem.getQuantity());

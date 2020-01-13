@@ -8,7 +8,7 @@ class DiscountRateCalculatorTest {
     DiscountRateCalculator discountRateCalculator = new DiscountRateCalculator();
 
     @Test
-    void test_Calculate() {
+    void test_Calculate_Should_ReturnPercentageDiscount() {
         assertEquals(100, discountRateCalculator.calculate(1000, 10));
     }
 }

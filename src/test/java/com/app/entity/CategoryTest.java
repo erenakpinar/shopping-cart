@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CategoryTest {
     @Test
-    void test_GetTitle() {
+    void test_GetTitle_Should_ReturnGivenProductTitle() {
         Category appleCategory = new Category("Apple");
 
         assertEquals("Apple", appleCategory.getTitle());
     }
 
     @Test
-    void test_GetParentCategory() {
+    void test_GetParentCategory_Should_ReturnGivenParentCategory() {
         Category electronicsCategory = new Category("Electronics");
         Category appleCategory = new Category("Apple", electronicsCategory);
 
