@@ -10,6 +10,7 @@ public class CouponDiscountApplier implements IDiscountApplier {
     public CouponDiscountApplier(IDiscountCalculator discountCalculator) {
         this.discountCalculator = discountCalculator;
     }
+
     @Override
     public double apply(Cart cart) {
         if (cart.getTotalAmountAfterDiscounts() >= cart.getCoupon().getMinimumAmount()) {

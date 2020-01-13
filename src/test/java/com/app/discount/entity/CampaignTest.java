@@ -4,7 +4,8 @@ import com.app.discount.type.DiscountType;
 import com.app.entity.Category;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class CampaignTest {
     Category category = new Category("Apple");

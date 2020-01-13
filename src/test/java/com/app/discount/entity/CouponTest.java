@@ -3,7 +3,7 @@ package com.app.discount.entity;
 import com.app.discount.type.DiscountType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CouponTest {
 

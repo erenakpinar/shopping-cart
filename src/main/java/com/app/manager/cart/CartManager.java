@@ -16,6 +16,7 @@ public class CartManager implements ICartManager {
                 .filter(i -> i.getProduct().getCategory().equalsWithParents(i.getProduct().getCategory(), campaignCategory))
                 .collect(Collectors.toList());
     }
+
     @Override
     public double getCartItemsTotalAmount(List<CartItem> cartItems) {
         return cartItems
@@ -23,6 +24,7 @@ public class CartManager implements ICartManager {
                 .mapToDouble(i -> i.getQuantity() * i.getProduct().getPrice())
                 .sum();
     }
+
     @Override
     public int getItemCountInCartItemList(List<CartItem> cartItems) {
         return cartItems.stream()

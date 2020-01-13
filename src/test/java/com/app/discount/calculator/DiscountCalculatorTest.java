@@ -3,10 +3,11 @@ package com.app.discount.calculator;
 import com.app.discount.type.DiscountType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DiscountCalculatorTest {
     DiscountCalculator discountCalculator = new DiscountCalculator();
+
     @Test
     void test_Calculate_ShouldBe_PercentAmount_IfDiscountTypeIsRate() {
         assertEquals(110, discountCalculator.calculate(1000, 11, DiscountType.RATE));

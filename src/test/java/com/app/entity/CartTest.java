@@ -2,6 +2,7 @@ package com.app.entity;
 
 import com.app.delivery.cost.DeliveryCostCalculator;
 import com.app.discount.applier.CampaignDiscountApplier;
+import com.app.discount.applier.CouponDiscountApplier;
 import com.app.discount.applier.IDiscountApplier;
 import com.app.discount.calculator.DiscountCalculator;
 import com.app.discount.calculator.IDiscountCalculator;
@@ -10,7 +11,6 @@ import com.app.discount.entity.Coupon;
 import com.app.discount.type.DiscountType;
 import com.app.manager.cart.CartManager;
 import com.app.manager.cart.ICartManager;
-import com.app.discount.applier.CouponDiscountApplier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CartTest {
     ICartManager cartManager = Mockito.spy(new CartManager());
@@ -81,6 +81,7 @@ class CartTest {
 
         assertEquals(2, cart.getCampaigns().size());
     }
+
     @Test
     void test_ApplyCoupon_ShouldBe_Equals_IfAddedCoupon() {
         Mockito.doReturn(1.0).when(couponDiscountApplier).apply(cart);

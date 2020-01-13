@@ -2,8 +2,8 @@ package com.app.discount.calculator;
 
 import com.app.discount.calculator.type.DiscountAmountCalculator;
 import com.app.discount.calculator.type.DiscountRateCalculator;
-import com.app.discount.type.DiscountType;
 import com.app.discount.calculator.type.IDiscountTypeCalculator;
+import com.app.discount.type.DiscountType;
 
 import java.util.HashMap;
 

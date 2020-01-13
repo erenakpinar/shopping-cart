@@ -3,7 +3,7 @@ package com.app.entity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CartItemTest {
     private Category appleCategory = new Category("Apple");

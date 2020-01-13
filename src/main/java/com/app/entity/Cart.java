@@ -1,10 +1,10 @@
 package com.app.entity;
 
+import com.app.delivery.cost.IDeliveryCostCalculator;
+import com.app.discount.applier.IDiscountApplier;
 import com.app.discount.entity.Campaign;
 import com.app.discount.entity.Coupon;
 import com.app.manager.cart.ICartManager;
-import com.app.delivery.cost.IDeliveryCostCalculator;
-import com.app.discount.applier.IDiscountApplier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,13 @@ public class Cart {
     private IDiscountApplier campaignDiscountApplier;
     private IDiscountApplier couponDiscountApplier;
     private IDeliveryCostCalculator deliveryCostCalculator;
-
+    private List<CartItem> items = new ArrayList<CartItem>();
+    private double totalAmount = 0;
+    private double totalAmountAfterDiscounts = 0;
+    private List<Campaign> campaigns = new ArrayList<Campaign>();
+    private double campaignDiscount;
+    private Coupon coupon;
+    private double couponDiscount;
     public Cart(
             ICartManager cartManager,
             IDiscountApplier campaignDiscountApplier,
@@ -31,16 +37,6 @@ public class Cart {
         this.couponDiscountApplier = couponDiscountApplier;
         this.deliveryCostCalculator = deliveryCostCalculator;
     }
-
-    private List<CartItem> items = new ArrayList<CartItem>();
-    private double totalAmount = 0;
-    private double totalAmountAfterDiscounts = 0;
-
-    private List<Campaign> campaigns = new ArrayList<Campaign>();
-    private double campaignDiscount;
-
-    private Coupon coupon;
-    private double couponDiscount;
 
     public List<CartItem> getItems() {
         return items;
@@ -62,16 +58,16 @@ public class Cart {
         return totalAmountAfterDiscounts;
     }
 
+    private void setTotalAmountAfterDiscounts(double amount) {
+        totalAmountAfterDiscounts = totalAmountAfterDiscounts > 0 ? amount : 0;
+    }
+
     public double getTotalAmount() {
         return totalAmount;
     }
 
     public Coupon getCoupon() {
         return coupon;
-    }
-
-    private void setTotalAmountAfterDiscounts(double amount) {
-        totalAmountAfterDiscounts = totalAmountAfterDiscounts > 0 ? amount : 0;
     }
 
     public void addItem(Product product, int quantity) {
