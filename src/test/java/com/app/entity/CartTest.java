@@ -11,7 +11,6 @@ import com.app.discount.entity.Coupon;
 import com.app.discount.type.DiscountType;
 import com.app.manager.cart.CartManager;
 import com.app.manager.cart.ICartManager;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -88,7 +87,7 @@ class CartTest {
         Coupon coupon = new Coupon(100, 10, DiscountType.RATE);
         cart.applyCoupon(coupon);
 
-        Assertions.assertEquals(coupon, cart.getCoupon());
+        assertEquals(coupon, cart.getCoupon());
     }
 
     @Test
